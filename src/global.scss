@@ -1,0 +1,19 @@
+// GLOBAL VARIABLES
+
+// Colors
+$mainColor: #15023a;
+
+// social colors
+$linkedInBlue: #0A66C2;
+$githubBlack: #171515;
+$twitterBlue: #1DA1F2;
+
+// Screen sizes
+$width: 768px;
+
+@mixin mobile {
+
+  @media (max-width: #{$width}) {
+    @content
+  }
+}

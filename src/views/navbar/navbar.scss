@@ -1,0 +1,107 @@
+@import "../../global.scss";
+
+.navbar {
+  background-color: #112B3C;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #EEEEEE;
+
+  z-index: 200;
+  position: fixed;
+  width: 100%;
+  
+  .right {
+    padding: 0 40px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      
+      h1 {
+        font-size: 32px;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .left {
+    padding: 0 40px;
+
+    .links {
+      display: flex;
+
+      @include mobile {
+        display: none;
+      } 
+
+      li {
+        margin-left: 40px;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+
+          font-size: small;
+          font-weight: 300;
+        }
+      }
+    }
+
+    .hamburger {
+      width: 32px;
+      height: 25px;
+      display: none;
+      cursor: pointer;
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      span {
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #EEEEEE;
+
+        // to spin
+        transform-origin: left;
+
+        // give animation
+        transition: all 0.5s ease-in-out;
+
+        &.line2 {
+          width: 80%;
+        }
+
+        &.line3 {
+          width: 60%;
+        }
+      }
+
+      &.active {
+        span {
+          &:first-child {
+            background-color: white;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            background-color: white;
+            transform: rotate(-45deg);
+            width: 100%;
+          }
+        }
+      }
+    }
+    
+  }
+
+}

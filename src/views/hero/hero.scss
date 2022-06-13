@@ -1,0 +1,235 @@
+@import "../../global.scss";
+
+.hero {
+  background-color: #112B3C;
+
+  .container {
+
+    padding: 8rem 16rem;
+
+    display: flex;
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      padding: 2rem 4em;
+    }
+
+    position: absolute;
+    top: 0;
+
+    .left {
+      flex: 1.5;
+      color: #EEEEEE;
+
+      h3 {
+        font-family: 'Courier New';
+        font-weight: 400;
+        font-size: 30px;
+        color: greenyellow;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+
+      h1 {
+        font-size: 80px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+
+      }
+
+      h2 {
+        font-size: 40px;
+        color: #acacac;
+
+        @include mobile {
+          font-size: 32px;
+        }
+      }
+
+      p {
+        font-size: 24px;
+        font-weight: 200;
+        margin-top: 20px;
+
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+
+      .getInTouchButton {
+        width: 16em;
+        
+        display: flex;
+        align-items: center;
+        
+        margin-top: 40px;
+        // padding: 20px 0;
+
+        border-bottom: 2px solid #EEEEEE;
+
+        @keyframes sideToSide {
+          50% {
+            transform: translateX(8px);
+          }
+          100% {
+            transform: translateX(0px);
+          }
+        }
+
+        &:hover {
+          .icon {
+            animation: sideToSide 1.2s infinite;
+          }
+        }
+
+        .icon {
+          width: 32px;
+        }
+
+        color: #EEEEEE;
+        text-decoration: none;
+
+        p {
+          margin-left: 20px;
+          margin-bottom: 20px;
+          font-size: 24px;
+          font-weight: 200;
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      padding: 2em;
+
+      @include mobile {
+        display: none;
+      }
+  
+      img {
+        width: 500px;
+        object-fit: cover;
+      }
+    }
+
+  }
+
+
+  .socials {
+    position: absolute;
+    top: 30%;
+    left: 0;
+
+    @include mobile {
+      display: none;
+    }
+
+    ul {
+
+      .linkedInButton {
+        background-color: $linkedInBlue;
+        
+        transform: translateX(-200px);
+
+        // animation
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+          transform: translateX(-40px);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 40px;
+
+          height: 60px;
+          width: 200px;
+
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+
+      .githubButton {
+        background-color: $githubBlack;
+        transform: translateX(-200px);
+
+        // animation
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+          transform: translateX(-40px);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 40px;
+
+          height: 60px;
+          width: 200px;
+
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+
+      .twitterButton {
+        background-color: $twitterBlue;
+        transform: translateX(-200px);
+
+         // animation
+         transition: all 0.4s ease-in-out;
+
+         &:hover {
+           transform: translateX(-40px);
+         }
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 40px;
+
+          height: 60px;
+          width: 200px;
+
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .downArrow {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    color: #EEEEEE;
+
+    @include mobile {
+      left: 44%;
+    }
+
+    @keyframes bobble {
+      50% {
+        transform: translateY(8px);
+      }
+    }
+
+    animation: bobble 2s infinite;
+  }
+}
